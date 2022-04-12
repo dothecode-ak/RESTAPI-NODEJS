@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <style>
+        #table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        #table td,
+        #table th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        
+        #table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        #table tr:hover {
+            background-color: #ddd;
+        }
+        
+        #table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: grey;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="table">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        <% Object.values(data).forEach(function(d){%>
+            <tr>
+                <td>
+                    <%= d.name %>
+                </td>
+                <td>
+                    <%=d.email %>
+                </td>
+                <td>
+                    <%= d.gender %>
+                </td>
+                <td>
+                    <%= d.status %>
+                </td>
+                <td>
+                    <a href="">Edit</a>
+                    <a href="">Delete</a>
+                </td>
+            </tr>
+            <%})%>
+    </table>
+</body>
+
+</html>
